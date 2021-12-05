@@ -5,37 +5,439 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="index.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Hahmlet:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comforter&family=Comforter+Brush&family=Satisfy&display=swap" rel="stylesheet">
+    <style>
+        *{margin: 0px; padding: 0px;}
+        ul{list-style: none;} /* 머릿말 제거 */
+        a{text-decoration: none;} /* 링크 걸어놓은 곳 밑줄 제거 */
+        li{list-style: none;}
+        a:visited {color: rgb(255, 255, 255);}
+        a:link {color: rgb(255, 255, 255);}
+
+        header {
+            width: 100%;
+            position: relative;  
+        }
+
+        #logo {
+            width: 100%;
+            height: 350px;
+            z-index: 1;
+        }
+
+        #logo a {
+             color: black;
+             font-size: 60px;
+             text-align: center;
+             line-height: 320px;
+             font-family: 'Satisfy', cursive;
+         }
+
+         #logo::after {
+             width: 100%;
+             height: 350px;
+             content: "";
+             background: url("img/ddd.jpg");
+             background-size: 100%;
+             position: absolute;
+             top: 0;
+             left: 0;
+             z-index: -1;
+             opacity: 0.9;
+         }
+
+         #topMenu {
+             background-color: rgb(255, 47, 134);
+             width: 1225px;
+             height: 190px;
+             color: rgb(255, 255, 255);
+             float: left;/* 왼쪽으로 나열되도록 설정 */ 
+             vertical-align: middle; /* 세로 정렬을 가운데로 설정 */ 
+             text-align: center; /* 텍스트를 가운데로 정렬 */ 
+             position: absolute; /* 해당 li 태그 내부의 top/left 포지션 초기화 */ 
+             font-size: 22px;
+             z-index: 2;
+             padding-left: 38px;
+             padding-top: 45px;
+             font-family: "Trebuchet MS",'Hahmlet';
+             font-weight: bold;
+         }
+
+        #topMenu ul { /* 메인 메뉴 안의 ul을 설정함: 상위메뉴의 ul+하위 메뉴의 ul */ 
+            list-style-type: none; 
+            margin: 0px; 
+            padding: 0px; 
+        }
+
+        #topMenu ul { 
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #topMenu li {
+            float: left;
+        }
+
+        #topMenu > ul > li > a {
+            display:inline-block; 
+            padding:18px 0 20px 0; 
+            width:250px; 
+            background:#d0d0d0; 
+            text-align:center; 
+            font-weight:bold; 
+            font-size:16px; 
+            color:#000;
+        }
+
+        #topMenu li ul li a {
+            display:inline-block; 
+            padding-top: 15px;
+            padding-left: 10px; 
+            padding-right: 10px;
+            font-size:18px; 
+            color:#fff;
+        }
+
+        #topMenu li ul li a:hover {
+            color:#000
+        }
+
+        .topMenuLi:hover .menuLink { /* 상위 메뉴의 li에 마우스오버 되었을 때 스타일 설정 */ 
+            color: rgb(0, 0, 0); /* 글씨 색 회색 */ 
+        } 
+
+        #topMenu li ul .submenu { 
+            display:none; 
+            position:absolute; 
+            left:80px; 
+            bottom:-6px; 
+        }
+
+        #topMenu li ul .submenu1 {
+            display:none; 
+            position:absolute; 
+            margin-top: 100px;
+        }
+
+        #topMenu > ul> li:hover > ul {
+            display:block;
+        }
+
+        .topMenuLi {
+            display: inline-block;
+            float: left;
+            text-align: center; /* 텍스트를 가운데로 정렬 */ 
+            margin: 40px;
+            padding-left: 5px;
+        }
+
+        #content {
+            display: flex;
+            justify-content: center;
+        }
+
+        .content1 {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgba(150, 150, 150, 0.801);
+            border-radius:3px;
+            margin: 1%;
+            padding-top: 60px;
+            padding: 27px;
+            height: 530px;
+            float: left;
+            box-sizing: border-box;
+            width: 370px;
+            text-align: start;
+            font-family: "Trebuchet MS",'Hahmlet';
+        }
+
+        .content2 {
+            background-color: rgb(255, 255, 255);
+            margin-top: 1%;
+            margin-bottom: 1%;
+            margin-right: 22px;
+            padding: 11px;
+            height: 530px;
+            float: left;
+            box-sizing: border-box;
+            width: 500px;
+            text-align: start;
+            font-family: "Trebuchet MS",'Hahmlet';
+        }
+
+        .content3 {
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgba(150, 150, 150, 0.801);
+            border-radius:3px;
+            margin: 1%;
+            padding-top: 60px;
+            padding: 27px;
+            height: 530px;
+            float: left;
+            box-sizing: border-box;
+            width: 300px;
+            text-align: start;
+            font-family: "Trebuchet MS",'Hahmlet';
+        }
+
+        .content3 a {
+            color: inherit;
+        }
+
+        .quiz, .blog {
+            font-family: "Trebuchet MS";
+            text-align: start;
+            font-size: 35px; 
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 2px gray;
+        }
+
+        #submit {
+            margin-top: 15px;
+            padding: 5px;
+            margin-right: -4px;
+            border-radius:1px; 
+            width: 100px;
+            color:rgb(0, 0, 0);
+            border: 1px solid rgb(112, 126, 250); 
+            background-color: rgba(0,0,0,0); 
+            color: rgb(122, 113, 247); 
+        }
+
+        #submit:hover { 
+            color:white; 
+            background-color: rgba(179, 151, 255, 0.575); 
+        }
+
+        footer {
+            font-family: "Trebuchet MS",'Hahmlet';
+            margin: 15px;
+            margin-left: 30px;
+            color: darkgray;
+        }
+
+        .address {
+            margin-bottom: 20px;
+            margin-right: 10px;
+            line-height: 40px;
+            list-style: square;
+
+        }
+
+        .line1 {
+            color: black;
+        }
+
+        .indeximg {
+            margin-top: -10.5px;
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .introduce {
+            margin-top: 3px;
+        }
+
+        .text {
+            margin-bottom: 10px;
+            font-size: 15px;
+        }
+
+        .text1 {
+            margin-bottom: 2px;
+            font-size: 15px;
+        }
+
+        main {
+            margin-top: 250px;
+        }
+    </style>
 </head>
 <body>
     <div id="page">
         <header>
             <div id="logo">
-                <a href="#">
-                <img src="https://postfiles.pstatic.net/MjAyMTExMThfMjE0/MDAxNjM3MTczOTE3MjE1.4wr7jxFeT55qlXwE-bS-P7wDCGytXl5GBE8ejPvD40kg.uDdAU3lw5JQk2kcuDi2QIVafWMQhoKcfdMOIwKdnGaEg.JPEG.dumpling0227/IMG_3124.jpg?type=w966" width="100" height="50" alt="Logo">
+                <a href="http://127.0.0.1:5500/index.html">
+                    <p>lavie est belle</p>
                 </a>
             </div>
-
-            <div id="top_Menu">
-                <a class="menulink" href="http://127.0.0.1:5500/aboutme.html">About me</a>
-                <li>|</li>
-                <a class="menuLink" href="http://127.0.0.1:5500/bookreview.html">Book Review</a>
-                <li>|</li>
-                <a class="menuLink">My Faborite</a>
-                    <ul class="submenu">
-                        <li><a href=http://127.0.0.1:5500/hobby.html class="submenuLink">Hobby</a></li> 
-                        <li><a href=http://127.0.0.1:5500/sport.html class="submenuLink">Sport</a></li> 
-                        <li><a href=http://127.0.0.1:5500/music.html class="submenuLink">Music</a></li> 
-                    </ul>
-                <li>|</li>
-                <a class="menuLink">Knowledge</a>
+            <div id="topMenu">
+                <li class="topMenuLi">
+                <a class="menuLink" href="http://127.0.0.1:5500/aboutme.html">About me</a> 
+                </li>
+               
+                <li class="topMenuLi">
+                <a class="menuLink" href="http://127.0.0.1:5500/bookreview.html">Book Review</a> 
+                </li>
+                
+                <li class="topMenuLi">
+                <a class="menuLink">My Faborite</a> 
                     <ul class="submenu"> 
-                        <li><a href=http://127.0.0.1:5500/javascript.html class="submenuLink">Java Script</a></li> 
-                        <li><a href=http://127.0.0.1:5500/rstudio.html class="submenuLink">R Studio</a></li> 
+                        <li><a class="submenuLink" href="http://127.0.0.1:5500/hobby.html">Hobby</a></li> 
+                        <li><a class="submenuLink" href="http://127.0.0.1:5500/sport.html">Sports</a></li> 
+                        <li><a class="submenuLink" href="http://127.0.0.1:5500/music.html">Music</a></li> 
                     </ul>
-                <li>|</li>
+                </li>
+                
+                <li class="topMenuLi">
+                <a class="menuLink">Knowledge</a> 
+                    <ul class="submenu1"> 
+                        <li><a class="submenuLink" href="http://127.0.0.1:5500/javascript.html">Java script</a></li> 
+                        <li><a class="submenuLink" href="http://127.0.0.1:5500/rstudio.html">R Studio</a></li>
+                    </ul>
+                </li>
+                
+                <li class="topMenuLi">
                 <a class="menuLink" href="http://127.0.0.1:5500/photography.html">Photography</a>
+                </li>
             </div>
         </header>
+        <main>
+            <div id="content">
+                <div class="content1">
+                    <p class="quiz">QUIZ</p>
+                    <p class="text">*저에 대한 퀴즈를 맞혀보세요!*</p>
+                    <div id="quiz"></div>
+                    <button id="submit"> Submit </button>
+                    <div id="result"> </div>
+
+                    <script>
+                        const quizData = [
+                            {
+                                question : 'Quiz.1 | 나의 MBTI는?',
+                                answers : {
+                                    a : "ISTP",
+                                    b : "ISTJ",
+                                    c : "ISFP"
+                            },
+                            correct : 'c'
+                            },
+                            {
+                                question : 'Quiz.2 | 나의 태어난 달은?',
+                                answers : {
+                                    a : '7월',
+                                    b : '10월',
+                                    c : '9월'
+                            },
+                            correct : 'b'
+                            },
+                            {
+                                question : 'Quiz.3 | 나의 혈액형은?',
+                                answers : {
+                                    a : 'A형',
+                                    b : 'O형',
+                                    c : 'AB형'
+                            },
+                            correct : 'a'
+                            },
+                            {
+                                question : 'Quiz.4 | 내가 가장 좋아하는 동물은?',
+                                answers : {
+                                    a : '강아지',
+                                    b : '고양이',
+                                    c : '햄스터'
+                            },
+                            correct : 'a'
+                            },
+                            {
+                                question : 'Quiz.5 | 나의 국민대학교 통학 시간은?',
+                                answers : {
+                                    a : '30분',
+                                    b : '1시간',
+                                    c : '1시간 30분'
+                            },
+                            correct : 'c'
+                            } 
+                        ]
+
+                        const quizDisplay = document.getElementById('quiz');
+                        const submitBtn = document.getElementById('submit');
+                        const resultDisplay = document.getElementById('result');
+                                
+                        function buildQuiz(){
+                            const output = [ ]; 
+                            quizData.forEach(  
+                                (currentQuestion, questionNum) => { 
+                                            const answers = [ ];     
+                                            for(item in currentQuestion.answers){  
+                                                        answers.push(`<label>
+                                                                        <input type="radio" name="question${questionNum}" value="${item}">
+                                                                            ${item} : ${currentQuestion.answers[item]}
+                                                                        </label>`);
+                                                }
+                                                    output.push(`<div class="question"> ${currentQuestion.question}</div>
+                                                                <div class="answer">${answers.join('')}</div>`);
+                                            }              
+                            );
+                                quizDisplay.innerHTML = output.join('</br>');
+                            }
+                            
+                        function showResult(){
+                                const answerDisplays = quizDisplay.querySelectorAll('.answer');  
+                                let numCorrect = 0; 
+
+                                    quizData.forEach( (currentQuestion, questionNum)=>{
+                                        const answerDisplay = answerDisplays[questionNum]; 
+                                        const selector = `input[name=question${questionNum}]:checked`;  
+                                        const userAnswer = (answerDisplay.querySelector(selector) || {}).value;  
+
+
+                                            if(userAnswer === currentQuestion.correct){    
+                                                    numCorrect++;
+                                                    answerDisplays[questionNum].style.color = 'black';
+                                            }else{
+                                                    answerDisplays[questionNum].style.color = 'red';
+                                            }
+                                    });
+                                    resultDisplay.innerHTML = `${numCorrect}점입니다!`; 
+                            }
+
+                            buildQuiz(); 
+                            submitBtn.addEventListener('click',showResult);   
+
+                    </script>
+                </div>
+                <div class="content2">
+                    <img src="img\index2.jpg" width="500px" height="360px" class="indeximg">
+                    <hr width="500px">
+                    <p class="introduce"><h2 style="text-shadow: 2px 2px 2px gray;">HELLO!</h2>제 홈페이지를 방문해주셔서 감사합니다.<br> lavie est belle는 '인생은 아름다워'라는 뜻입니다! <br> 이 홈페이지는 저에 대한 소개인 About Me와 제가 읽은 Book Review, My Favorite, 그리고 제가 공부했었던 것에 대한 소개인 Knowldege, 마지막으로 저의 인생을 담은 Photography로 구성이 되어 있습니다.</p>
+                    <hr width="500px" style="margin-top: 15px;">
+                </div>
+                <div class="content3">
+                    <p class="blog">BLOG</p>
+                    <p class="text1">*제 블로그입니다! 구경해보세요*</p>
+                    <div class="address">
+                        <li><a href="https://blog.naver.com/dumpling0227/222571512870">모험과 신비의 나라 롯데월드!</a></li>
+                        <hr class="line1">
+                        <li><a href="https://blog.naver.com/dumpling0227/222542799785">10월의 제주</a></li>
+                        <hr class="line1">
+                        <li><a href="https://blog.naver.com/dumpling0227/222522419330">9월... 개강이었다</a></li>
+                        <hr class="line1">
+                        <li><a href="https://blog.naver.com/dumpling0227/222490773808">8월... 여름이었다</a></li>
+                        <hr class="line1">
+                        <li><a href="https://blog.naver.com/dumpling0227/222452046302">7월의 나머지</a></li>
+                        <hr class="line1">
+                        <li><a href="https://blog.naver.com/dumpling0227/222451685518">바다 보러 감</a></li>
+                        <hr class="line1">
+                        <li><a href="https://blog.naver.com/dumpling0227/222435508450">다사다난했던 7월의 절반</a></li>
+                        <hr class="line1">
+                        <li><a href="https://blog.naver.com/dumpling0227/222420829273">더 현대 서울</a></li>
+                        <hr class="line1">
+                        <li><a href="https://blog.naver.com/dumpling0227/222415044290">종강해서 행복한 6월</a></li>
+                        <hr class="line1">
+                        <li><a href="https://blog.naver.com/dumpling0227/222373674597">완전 재밌는 5월 </a></li>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <hr>
+        <footer>
+            <p>Thank you for visiting my website.</p>
+            <p>INSTAGRAM : lluvvv_xu</p>
+        </footer>
     </div>
 </body>
 </html>
