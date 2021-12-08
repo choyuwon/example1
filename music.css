@@ -1,0 +1,179 @@
+*{margin: 0px; padding: 0px;}
+ul{list-style: none;} /* 머릿말 제거 */
+a{text-decoration: none;} /* 링크 걸어놓은 곳 밑줄 제거 */
+li{list-style: none;}
+a:visited {color: rgb(255, 47, 134);}
+a:link {color: rgb(255, 47, 134);}
+
+.menuLink1, .submenuLink1 {
+    background: linear-gradient(to top, #fdc8ff 20%, transparent 20%);
+}
+
+header{
+    width: 1262px;
+    height: 95px;
+    position: relative;
+    background-image: url("img/ddd.jpg");
+}
+
+#logo{
+    position: absolute;
+    top: 28px;
+    left: 40px;
+    font-size: 38px;
+    font-family: 'Satisfy', cursive;
+    color: rgb(0, 0, 0);
+    background: rgb(0, 0, 0);
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 2px gray;
+}
+
+#logo:hover {
+    font-size: 40px;
+}
+
+#topMenu { 
+    color: rgb(255, 47, 134);
+    top: 25px;
+    right: 25px;
+    float: left; /* 왼쪽으로 나열되도록 설정 */ 
+    vertical-align: middle; /* 세로 정렬을 가운데로 설정 */ 
+    text-align: center; /* 텍스트를 가운데로 정렬 */ 
+    position: absolute; /* 해당 li 태그 내부의 top/left 포지션 초기화 */ 
+    font-size: 22px;
+    z-index: 2;
+} 
+
+.topMenuLi {
+    float: left;
+    text-align: center; /* 텍스트를 가운데로 정렬 */ 
+    margin: 15px;
+}
+
+.submenu {
+    padding-left: 24px;
+}
+
+.submenu, .submenu1 { /* 하위 메뉴 스타일 설정 */ 
+    position: absolute; /* html의 flow에 영향을 미치지 않게 absolute 설정 */ 
+    height: 0px; /* 초기 높이는 0px로 설정 */ 
+    overflow: hidden; /* 실 내용이 높이보다 커지면 해당 내용 감춤 */ 
+    transition: height .2s; /* height를 변화 시켰을 때 0.2초간 변화 되도록 설정(기본) */
+    font-size: 17px; 
+    text-align: center;
+    font-family: "Trebuchet MS", Dotum;
+    margin-top: 10px;
+} 
+
+.menuLink, .menuLink1, .submenuLink, .submenuLink1 { /* 상위 메뉴와 하위 메뉴의 a 태그에 공통으로 설정할 스타일 */ 
+    text-decoration:none; /* a 태그의 꾸밈 효과 제거 */ 
+    display: block; /* a 태그의 클릭 범위를 넓힘 */ 
+    font-weight: bold; /* 폰트를 굵게 설정 */ 
+    font-family: "Trebuchet MS", Dotum; /* 기본 폰트를 영어/한글 순서대로 설정 */
+    z-index: 2; 
+} 
+
+.submenuLink, .submenuLink1 { /* 하위 메뉴의 a 태그 스타일 설정 */ 
+    top: 10px;
+    left: 10px;
+    color: #2d2d2d; /* 글씨 색을 RGB(2D2D2D)로 설정 */ 
+    background-color: rgb(238, 238, 238); /* 배경색을 흰색으로 설정 */ 
+    border-width: 7px;
+    border-left: 10px;
+    border-right: 10px;
+    border-style: solid;
+    border-color: rgb(238, 238, 238);
+} 
+
+.topMenuLi:hover .menuLink { /* 상위 메뉴의 li에 마우스오버 되었을 때 스타일 설정 */ 
+    color: rgb(133, 133, 133); /* 글씨 색 파란색 */ 
+} 
+
+.topMenuLi:hover .menuLink1 { /* 상위 메뉴의 li에 마우스오버 되었을 때 스타일 설정 */ 
+    color: rgb(133, 133, 133); /* 글씨 색 파란색 */ 
+} 
+
+.topMenuLi:hover .submenu { /* 상위 메뉴에 마우스 모버한 경우 그 안의 하위 메뉴 스타일 설정 */ 
+    height: 110px; /* 높이 설정 */ 
+} 
+
+.topMenuLi:hover .submenu1 { /* 상위 메뉴에 마우스 모버한 경우 그 안의 하위 메뉴 스타일 설정 */ 
+    height: 77px; /* 높이 설정 */ 
+} 
+
+.submenuLink:hover { /* 하위 메뉴의 a 태그의 마우스 오버 스타일 설정 */ 
+    color: rgb(133, 133, 133); /* 글씨색 설정 */ 
+    background-color: rgb(238, 238, 238); /* 배경 설정 */ 
+}
+
+.submenuLink1:hover { /* 하위 메뉴의 a 태그의 마우스 오버 스타일 설정 */ 
+    color: rgb(133, 133, 133); /* 글씨색 설정 */ 
+    background-color: rgb(238, 238, 238); /* 배경 설정 */ 
+}
+
+.content1 {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgba(150, 150, 150, 0.801);
+    border-radius:3px;
+    margin-bottom: 0.3%;
+    margin-left: 1.7%;
+    margin-top: 1.7%;
+    padding-left: 10px;
+    padding-top: 10px;
+    height: 250px;
+    float: left;
+    box-sizing: border-box;
+    width: 600px;
+    text-align: start;
+    font-family: "Trebuchet MS",'Hahmlet';
+}
+
+.text1 {
+    padding-left: 250px;
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.text2 {
+    padding-left: 250px;
+    padding-top: 10px;
+    padding-right: 13px;
+}
+
+footer {
+    font-family: "Trebuchet MS",'Hahmlet';
+    margin: 15px;
+    margin-left: 30px;
+    color: darkgray;
+}
+
+#content {
+    position: relative;
+    float: left;
+    margin-top: 8px;
+    color: inherit;
+}
+
+main {
+    margin-bottom: 640px;
+}
+
+
+.p1 {
+    margin-top: 9px;
+    padding-left: 30px;
+    font-size: 15px;
+    font-family: "Trebuchet MS",'Hahmlet';
+}
+
+.p {
+    font-family: "Trebuchet MS", 'Hahmlet';
+    font-size: 33px; 
+    margin-left: 35px;
+    text-shadow: 2px 2px 2px gray;
+    background: linear-gradient(to top, #fdc8ff 35%, transparent 35%);
+    background-size: 100px;
+    padding-top: 10px;
+}
