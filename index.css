@@ -107,7 +107,6 @@ header {
 }
 
 .topMenuLi {
-    display: table;
     float: left;
     margin: auto;
     padding: 0;
@@ -115,7 +114,6 @@ header {
 }
 
 .menuLink {
-    display: inline-block;
     margin: 30px;
 }
 
