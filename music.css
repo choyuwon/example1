@@ -5,6 +5,10 @@ li{list-style: none;}
 a:visited {color: rgb(255, 47, 134);}
 a:link {color: rgb(255, 47, 134);}
 
+html,body {
+    height: 100%;
+}
+
 .menuLink1, .submenuLink1 {
     background: linear-gradient(to top, #fdc8ff 20%, transparent 20%);
 }
@@ -144,9 +148,9 @@ header{
 
 footer {
     font-family: "Trebuchet MS",'Hahmlet';
-    margin: 15px;
-    margin-left: 30px;
-    color: darkgray;
+    padding: 15px;
+    padding-left: 30px;
+    color: rgb(0, 0, 0);
 }
 
 #content {
@@ -154,6 +158,7 @@ footer {
     float: left;
     margin-top: 8px;
     color: inherit;
+    margin-left: 5%;
 }
 
 main {
@@ -176,4 +181,22 @@ main {
     background: linear-gradient(to top, #fdc8ff 35%, transparent 35%);
     background-size: 100px;
     padding-top: 10px;
+}
+
+#page {
+    min-height: 100%;
+    position: relative;
+}
+
+main {
+    padding-bottom: 100px; /* footer의 높이 */
+}
+
+footer {
+    width: 100%;
+    height: 50px; /* footer의 높이 */
+    position: absolute;  
+    bottom: 0;
+    left: 0;
+    background-color: rgb(241, 241, 241);
 }
