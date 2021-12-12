@@ -195,3 +195,7 @@ footer {
     left: 0;
     background-color: rgb(241, 241, 241);
 }
+
+#content {
+    margin-left: 5%;
+}
