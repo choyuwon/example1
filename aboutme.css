@@ -145,7 +145,7 @@ header{
 
 .content3 {
     background-color: rgb(255, 255, 255);
-    margin-left: 2%;
+    margin-left: 13%;
     margin-top: 1%;
     padding-left: 0%;
     padding-right: 27px;
@@ -165,7 +165,6 @@ header{
 
 .content3 {
     display: flex;
-    margin-left: 6%
 }
 
 footer {
