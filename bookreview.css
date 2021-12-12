@@ -155,9 +155,9 @@ header{
 
 footer {
     font-family: "Trebuchet MS",'Hahmlet';
-    margin: 15px;
-    margin-left: 30px;
-    color: darkgray;
+    padding: 15px;
+    padding-left: 30px;
+    color: rgb(0, 0, 0);
 }
 
 main {
