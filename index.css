@@ -28,7 +28,7 @@ header {
     width: 122%;
     height: 350px;
     content: "";
-    background: url("img/ddd.jpg");
+    background: url("ddd.jpg");
     background-size: 120%;
     position: absolute;
     top: 0;
